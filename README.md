@@ -1,9 +1,15 @@
 # 常用方法:比如获取手机网络类型、运营商等相关信息、URL编码解码、json序列化
 
+#PS:有两种使用方法
+<ul type="disc">
+<li>方法1:请使用"EBTGlobalHandlerUnity"文件中的类方法</li>
+<li>方法2:请使用"NSString+TJ_Unity"类别文件中的类方法</li>
+</ul>  
+
 #使用pod指令添加到项目中:
 
- <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
- 
+ <h2>pod 'EBTNStringUnity', '~> 1.0.2'</h2>
+
  ```
  /**
  *  字符串反序列化转为json对象
