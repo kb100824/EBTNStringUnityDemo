@@ -1,11 +1,10 @@
 # 常用方法:比如获取手机网络类型、运营商等相关信息、URL编码解码、json序列化
 
 #使用pod指令添加到项目中:
- <p>
+ <h2>
  pod 'EBTNStringUnity', '~> 1.0.0'
- </p>
+ </h2>
  
- <code>
  <p>
  /**
  *  字符串反序列化转为json对象
@@ -84,17 +83,17 @@
 
 + (NSString *)currentDeviceIMSIType;
 </p>
-<p>
 
+
+<p>
 /**
  *   获取当前设备的网络类型2g 3g 4g等等
  *  @return 返回网络类型
  */
 + (NSString *)currentDeviceNetWorkType;
 </p>
+
 <p>
-
-
 /**
  *  对字符串进行MD5加密
  *
@@ -104,5 +103,4 @@
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
 </p>
- </code>
  
