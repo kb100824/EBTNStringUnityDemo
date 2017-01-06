@@ -1,8 +1,8 @@
 //
-//  EBTNSStringUnityGlobalHandler.m
+//  NSString+TJ_Unity.m
 //  EBTNStringUnityDemo
 //
-//  Created by ebaotong on 2017/1/6.
+//  Created by MJ on 2017/1/7.
 //  Copyright © 2017年 com.csst. All rights reserved.
 //
 
@@ -12,37 +12,23 @@
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 
 #import <UIKit/UIKit.h>
-#import "EBTGlobalHandlerUnity.h"
+#import "NSString+TJ_Unity.h"
 #import <sys/utsname.h>
 #include <CommonCrypto/CommonDigest.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
 
-
-@interface EBTGlobalHandlerUnity ()
-
-@end
-@implementation EBTGlobalHandlerUnity
-
-+ (EBTGlobalHandlerUnity *)shareInstance{
-
-    static EBTGlobalHandlerUnity *handlerUnity = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        handlerUnity = [[EBTGlobalHandlerUnity alloc]init];
-    });
-    return  handlerUnity;
-}
+@implementation NSString (TJ_Unity)
 
 #pragma mark - json序列化
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString{
     NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     id resultObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     return resultObject;
-
+    
 }
 + (NSString *)jsonStringTransformToJsonObject:(id)jsonObject{
-
+    
     NSData *data = [NSJSONSerialization dataWithJSONObject:jsonObject options:NSJSONWritingPrettyPrinted error:nil];
     NSString *resultStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return  resultStr;
@@ -60,7 +46,7 @@
     }
     
     return @"";
-
+    
 }
 + (NSString *)decodeString:(NSString *)encodedURLString{
     
@@ -69,7 +55,7 @@
                                                                                                                      CFSTR(""),
                                                                                                                      CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
     return decodedString;
-
+    
 }
 #pragma mark - 当前设备相关信息
 
@@ -129,7 +115,7 @@
         
         return @"";
     }
-
+    
     
     
 }
@@ -142,7 +128,7 @@
     NSString *deviceScreen = [NSString stringWithFormat:@"%ldx%ld",width,height];
     
     return deviceScreen;
-
+    
 }
 
 + (NSString *)currentDeviceIMSIType{
@@ -156,7 +142,7 @@
     }
     
     return mobileImsiType;
-
+    
 }
 
 + (NSString *)currentDeviceNetWorkType{
@@ -174,22 +160,22 @@
     }
     NSString *netWorkType = @"";
     switch ([[dataNetworkItemView valueForKey:@"dataNetworkType"]integerValue]) {
-        case 0:
+            case 0:
             netWorkType = @"无网络连接";
             break;
-        case 1:
+            case 1:
             netWorkType = @"2G";
             break;
-        case 2:
+            case 2:
             netWorkType = @"2G";
             break;
-        case 3:
+            case 3:
             netWorkType = @"3G";
             break;
-        case 4:
+            case 4:
             netWorkType = @"4G/LTE";
             break;
-        case 5:
+            case 5:
             netWorkType = @"WIFI";
             break;
         default:
@@ -201,7 +187,7 @@
 }
 
 + (NSString *)EncryptionMD5:(NSString *)encryptString{
-
+    
     const char* input = [encryptString UTF8String];
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     CC_MD5(input, (CC_LONG)strlen(input), result);
@@ -212,7 +198,7 @@
     }
     
     return digest;
-
+    
 }
 
 
