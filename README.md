@@ -1,11 +1,9 @@
 # 常用方法:比如获取手机网络类型、运营商等相关信息、URL编码解码、json序列化
 
 #使用pod指令添加到项目中:
- <h2>
- pod 'EBTNStringUnity', '~> 1.0.0'
- </h2>
+ <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
  
- 
+ <p>
  /**
  *  字符串反序列化转为json对象
  *
@@ -13,9 +11,10 @@
  *
  *  @return 返回id对象
  */
-<p>
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
 </p>
+
+
 
 <p>
 /**
