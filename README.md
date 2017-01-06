@@ -35,7 +35,6 @@
  *
  *  @return 返回编码后字符串
  */
-```
 + (NSString *)enCodeOriginURLString:(NSString *)originURLString;
 ```
 ```
