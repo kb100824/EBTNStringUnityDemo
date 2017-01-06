@@ -4,7 +4,8 @@
  <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
  
  
- 
+ <pre>
+ <code>
  /**
  *  字符串反序列化转为json对象
  *
@@ -12,8 +13,7 @@
  *
  *  @return 返回id对象
  */
- <pre>
- <code>
+ 
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
 <pre>
  <code>
