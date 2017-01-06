@@ -3,8 +3,8 @@
 #使用pod指令添加到项目中:
 
  <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
-
-## <pre>
+ 
+ <pre>
  <code>
  ```
  /**
