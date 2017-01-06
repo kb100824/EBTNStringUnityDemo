@@ -13,10 +13,11 @@
  *
  *  @return 返回id对象
  */
- 
+ ```
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
-<pre>
- <code>
+```
+</pre>
+ </code>
 
 
 <p>
