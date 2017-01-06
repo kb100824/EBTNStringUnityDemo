@@ -17,9 +17,6 @@
  
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
 ```
-
-
-
 ```
 /**
  * json序列化转为字符串
@@ -30,9 +27,7 @@
  */
 + (NSString *)jsonStringTransformToJsonObject:(id)jsonObject;
 ```
-
-
-
+```
 /**
  *  url进行encode编码
  *
@@ -43,8 +38,6 @@
 ```
 + (NSString *)enCodeOriginURLString:(NSString *)originURLString;
 ```
-
-
 ```
 /**
  *  url进行decode解码
@@ -56,9 +49,6 @@
 
 + (NSString *)decodeString:(NSString *)encodedURLString;
 ```
-
-
-
 ```
 /**
  *   获取当前设备的型号
@@ -67,8 +57,6 @@
 
 + (NSString *)currentDeviceModelName;
 ```
-
-
 ```
 /**
  *   获取当前设备的分辨率
@@ -77,7 +65,6 @@
 
 + (NSString *)currentDeviceScreen;
 ```
-
 ```
 /**
  *   获取当前设备的运营商信息
@@ -86,8 +73,6 @@
 
 + (NSString *)currentDeviceIMSIType;
 ```
-
-
 ```
 /**
  *   获取当前设备的网络类型2g 3g 4g等等
@@ -95,7 +80,6 @@
  */
 + (NSString *)currentDeviceNetWorkType;
 ```
-
 ```
 /**
  *  对字符串进行MD5加密
