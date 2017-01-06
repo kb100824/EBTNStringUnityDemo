@@ -1,9 +1,12 @@
 # 常用方法:比如获取手机网络类型、运营商等相关信息、URL编码解码、json序列化
 
 #使用pod指令添加到项目中:
- <p></p>
+ <p>
+ pod 'EBTNStringUnity', '~> 1.0.0'
+ </p>
  
  <code>
+ <p>
  /**
  *  字符串反序列化转为json对象
  *
@@ -12,8 +15,9 @@
  *  @return 返回id对象
  */
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
+</p>
 
-
+<p>
 /**
  * json序列化转为字符串
  *
@@ -22,8 +26,11 @@
  *  @return 返回json字符串
  */
 + (NSString *)jsonStringTransformToJsonObject:(id)jsonObject;
+</p>
 
 
+
+<p>
 /**
  *  url进行encode编码
  *
@@ -33,9 +40,10 @@
  */
 
 + (NSString *)enCodeOriginURLString:(NSString *)originURLString;
+</p>
 
 
-
+<p>
 /**
  *  url进行decode解码
  *
@@ -46,9 +54,10 @@
 
 + (NSString *)decodeString:(NSString *)encodedURLString;
 
+</p>
 
 
-
+<p>
 /**
  *   获取当前设备的型号
  *  @return 设备型号
@@ -56,29 +65,34 @@
 
 + (NSString *)currentDeviceModelName;
 
+</p>
 
+<p>
 /**
  *   获取当前设备的分辨率
  *  @return 分辨率
  */
 
 + (NSString *)currentDeviceScreen;
+</p>
 
-
+<p>
 /**
  *   获取当前设备的运营商信息
  *  @return 返回电\信移\动联通
  */
 
 + (NSString *)currentDeviceIMSIType;
-
+</p>
+<p>
 
 /**
  *   获取当前设备的网络类型2g 3g 4g等等
  *  @return 返回网络类型
  */
 + (NSString *)currentDeviceNetWorkType;
-
+</p>
+<p>
 
 
 /**
@@ -89,5 +103,6 @@
  *  @return md5加密后的字符串
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
+</p>
  </code>
  
