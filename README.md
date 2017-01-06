@@ -4,6 +4,7 @@
 
  <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
 
+<span style="font-size: 16px;">
  <pre>
  <code>
  ```
@@ -91,3 +92,4 @@
 ```
 </pre>
 </code>
+</span>
