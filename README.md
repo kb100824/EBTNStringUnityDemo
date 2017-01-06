@@ -1,9 +1,9 @@
 # 常用方法:比如获取手机网络类型、运营商等相关信息、URL编码解码、json序列化
 
 #使用pod指令添加到项目中:
+
  <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
- 
- 
+
  <pre>
  <code>
  ```
@@ -18,10 +18,10 @@
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
 ```
 </pre>
- </code>
+</code>
 
 
-<p>
+```
 /**
  * json序列化转为字符串
  *
@@ -30,7 +30,7 @@
  *  @return 返回json字符串
  */
 + (NSString *)jsonStringTransformToJsonObject:(id)jsonObject;
-</p>
+```
 
 
 
