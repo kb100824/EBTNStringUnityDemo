@@ -3,7 +3,7 @@
 #使用pod指令添加到项目中:
  <p></p>
  
- <p>
+ <code>
  /**
  *  字符串反序列化转为json对象
  *
@@ -89,5 +89,5 @@
  *  @return md5加密后的字符串
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
- </p>
+ </code>
  
