@@ -4,7 +4,6 @@
 
  <h2>pod 'EBTNStringUnity', '~> 1.0.0'</h2>
 
-<span style="font-size: 16px;">
  <pre>
  <code>
  ```
@@ -15,7 +14,6 @@
  *
  *  @return 返回id对象
  */
- 
 + (instancetype)jsonObjectTransformToJsonString:(NSString *)jsonString;
 ```
 ```
@@ -46,7 +44,6 @@
  *
  *  @return 返回解码后的url
  */
-
 + (NSString *)decodeString:(NSString *)encodedURLString;
 ```
 ```
@@ -54,7 +51,6 @@
  *   获取当前设备的型号
  *  @return 设备型号
  */
-
 + (NSString *)currentDeviceModelName;
 ```
 ```
@@ -62,7 +58,6 @@
  *   获取当前设备的分辨率
  *  @return 分辨率
  */
-
 + (NSString *)currentDeviceScreen;
 ```
 ```
@@ -92,4 +87,3 @@
 ```
 </pre>
 </code>
-</span>
