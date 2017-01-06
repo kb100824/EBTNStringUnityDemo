@@ -52,7 +52,7 @@ Md5 encryption mobile phone equipment model operators and other related informat
   #  profile URL.
   #
 
-  s.author             = { "" => "2455063164@qq.com" }
+  s.author             = { "KBvsMJ" => "2455063164@qq.com" }
   # Or just: s.author    = ""
   # s.authors            = { "" => "2455063164@qq.com" }
   # s.social_media_url   = "http://twitter.com/"
