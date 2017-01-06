@@ -1,1 +1,1 @@
-# EBTNStringUnityDemo
+# 常用方法:比如获取手机网络类型、运营商等相关信息
