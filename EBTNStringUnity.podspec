@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "EBTNStringUnity Provides common method invocations,such as 
+  s.description  = "EBTNStringUnity Provides common method invocations,such as
 Md5 encryption mobile phone equipment model operators and other related information"
 
   s.homepage     = "https://github.com/KBvsMJ/EBTNStringUnityDemo"
@@ -67,7 +67,7 @@ Md5 encryption mobile phone equipment model operators and other related informat
    s.platform     = :ios, "8.0"
    s.requires_arc  = true
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+   s.ios.deployment_target = "8.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
