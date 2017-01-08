@@ -61,7 +61,7 @@
 
 /**
  *   获取当前设备的运营商信息
- *  @return 返回电\信移\动联通
+ *  @return 比如返回电信、移动、联通
  */
 
 + (NSString *)currentDeviceIMSIType;
