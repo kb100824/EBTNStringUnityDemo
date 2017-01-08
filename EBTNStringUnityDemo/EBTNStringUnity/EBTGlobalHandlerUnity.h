@@ -105,7 +105,19 @@
 
 + (NSString *)currentDeviceIPAddress_NetWorkIsIPV4:(BOOL)netWorkisIPV4;
 
+/**
+ *  获取设备电池百分比
+ *  @return 电池百分比
+ */
 
++ (NSString *)currentDeviceBatteryQuantityPercent;
+
+/**
+ *  获取设备充电状态
+ *  @return 充电状态
+ */
+
++ (NSString *)currentDeviceBatteryQuantityState;
 
 
 

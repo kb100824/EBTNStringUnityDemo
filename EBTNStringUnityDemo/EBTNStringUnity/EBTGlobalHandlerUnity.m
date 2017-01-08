@@ -33,6 +33,10 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
+//获取设备内存
+#import <sys/sysctl.h>
+#import <mach/mach.h>
+
 @interface EBTGlobalHandlerUnity ()
 
 @end
@@ -315,4 +319,52 @@ static inline NSDictionary * getIPAddress(){
 
 }
 
+#pragma mark - 获取设备电量百分比以及充电状态
+
++ (NSString *)currentDeviceBatteryQuantityPercent{
+  
+    NSString *result = nil;
+    if (![UIDevice currentDevice].batteryMonitoringEnabled) {
+        //开启电池状态监视开关
+        [UIDevice currentDevice].batteryMonitoringEnabled = YES;
+    }
+   
+    CGFloat batteryLevelResult = [UIDevice currentDevice].batteryLevel;
+    //-1表示未开启电池状态监视
+    if (batteryLevelResult<0) {
+        result = @"未开启电池状态监视";
+    }else{
+      
+        result = [NSString stringWithFormat:@"%3.0f%%",batteryLevelResult*100];
+    }
+   
+    return result;
+
+}
+
++ (NSString *)currentDeviceBatteryQuantityState{
+    
+    NSString *resultState = nil;
+    if (![UIDevice currentDevice].batteryMonitoringEnabled) {
+        //开启电池状态监视开关
+        [UIDevice currentDevice].batteryMonitoringEnabled = YES;
+    }
+    
+    switch ([UIDevice currentDevice].batteryState) {
+        case UIDeviceBatteryStateUnknown:
+             resultState = @"无法读取电池状态";
+            break;
+        case UIDeviceBatteryStateUnplugged:
+            resultState = @"未充电";
+            break;
+        case UIDeviceBatteryStateFull:
+            resultState = @"充电已满";
+            break;
+        case UIDeviceBatteryStateCharging:
+            resultState = @"充电中";
+            break;
+    }
+    
+    return resultState;
+}
 @end
