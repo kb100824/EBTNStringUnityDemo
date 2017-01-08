@@ -41,8 +41,6 @@
 
 + (NSString *)enCodeOriginURLString:(NSString *)originURLString;
 
-
-
 /**
  *  url进行decode解码
  *
@@ -52,8 +50,6 @@
  */
 
 + (NSString *)decodeString:(NSString *)encodedURLString;
-
-
 
 
 /**
@@ -87,7 +83,6 @@
 + (NSString *)currentDeviceNetWorkType;
 
 
-
 /**
  *  对字符串进行MD5加密
  *
@@ -96,5 +91,58 @@
  *  @return md5加密后的字符串
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
+
+
+/**
+ *  获取设备的ip地址
+ *
+ *  @param netWorkisIPV4 ipv4还是ipv6
+ *
+ *  @return ip地址
+ */
+
++ (NSString *)currentDeviceIPAddress_NetWorkIsIPV4:(BOOL)netWorkisIPV4;
+
+
+/**
+ *  获取设备电池百分比
+ *  @return 电池百分比
+ */
+
++ (NSString *)currentDeviceBatteryQuantityPercent;
+
+/**
+ *  获取设备充电状态
+ *  @return 充电状态
+ */
+
++ (NSString *)currentDeviceBatteryQuantityState;
+
+/**
+ *  获取当前设备可用内存
+ *  @return 可用内存
+ */
++ (NSString *)currentDeviceAvailableMemory;
+
+
+/**
+ *  获取当前任务所占用的内存
+ *  @return 占用的内存
+ */
++ (NSString *)currentDeviceUserTakeUpMemory;
+
+
+/**
+ *  获取总磁盘容量
+ *  @return 磁盘容量
+ */
++ (NSString *)currentDeviceTotalCapacitySize;
+
+/**
+ *  获取可用磁盘容量
+ *  @return 可用磁盘容量
+ */
++ (NSString *)currentDeviceAvailableCapacitySize;
+
 
 @end
