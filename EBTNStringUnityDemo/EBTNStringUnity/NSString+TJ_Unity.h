@@ -41,8 +41,6 @@
 
 + (NSString *)enCodeOriginURLString:(NSString *)originURLString;
 
-
-
 /**
  *  url进行decode解码
  *
@@ -52,8 +50,6 @@
  */
 
 + (NSString *)decodeString:(NSString *)encodedURLString;
-
-
 
 
 /**
@@ -85,7 +81,6 @@
  *  @return 返回网络类型
  */
 + (NSString *)currentDeviceNetWorkType;
-
 
 
 /**

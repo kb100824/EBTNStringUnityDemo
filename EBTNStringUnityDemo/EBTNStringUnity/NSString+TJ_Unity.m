@@ -133,7 +133,7 @@
     
     
 }
-
+#pragma mark - 当前设备分辨率
 + (NSString *)currentDeviceScreen{
     
     CGFloat scale_screen = 1;
@@ -145,6 +145,7 @@
     
 }
 
+#pragma mark - 当前设备运营商
 + (NSString *)currentDeviceIMSIType{
     NSString *mobileImsiType = @"";
     CTTelephonyNetworkInfo *netWorkInfo = [CTTelephonyNetworkInfo new];
@@ -158,7 +159,7 @@
     return mobileImsiType;
     
 }
-
+#pragma mark - 当前设备网络类型
 + (NSString *)currentDeviceNetWorkType{
     NSArray *statusSubViews = [[[[UIApplication sharedApplication] valueForKey:@"statusBar"] valueForKey:@"foregroundView"]subviews];
     
@@ -199,7 +200,7 @@
     
     return netWorkType;
 }
-
+#pragma mark - MD5
 + (NSString *)EncryptionMD5:(NSString *)encryptString{
     
     const char* input = [encryptString UTF8String];
