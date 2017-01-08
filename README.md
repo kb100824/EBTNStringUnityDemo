@@ -8,7 +8,7 @@
 
 #使用pod指令添加到项目中:
 ```
- pod 'EBTNStringUnity', '~> 1.0.2'
+ pod 'EBTNStringUnity'
 ```
  ```
  /**
