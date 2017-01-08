@@ -96,11 +96,11 @@
 /**
  *  获取设备的ip地址
  *
- *  @param netWorkISIPV4 ipv4还是ipv6
+ *  @param netWorkisIPV4 ipv4还是ipv6
  *
  *  @return ip地址
  */
 
-+(NSString *)iPhoneDeviceIPAddress:(BOOL)netWorkISIPV4;
++ (NSString *)currentDeviceIPAddress_NetWorkIsIPV4:(BOOL)netWorkisIPV4;
 
 @end
