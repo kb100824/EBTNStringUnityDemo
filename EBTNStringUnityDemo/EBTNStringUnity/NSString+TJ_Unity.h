@@ -118,6 +118,31 @@
 
 + (NSString *)currentDeviceBatteryQuantityState;
 
+/**
+ *  获取当前设备可用内存
+ *  @return 可用内存
+ */
++ (NSString *)currentDeviceAvailableMemory;
+
+
+/**
+ *  获取当前任务所占用的内存
+ *  @return 占用的内存
+ */
++ (NSString *)currentDeviceUserTakeUpMemory;
+
+
+/**
+ *  获取总磁盘容量
+ *  @return 磁盘容量
+ */
++ (NSString *)currentDeviceTotalCapacitySize;
+
+/**
+ *  获取可用磁盘容量
+ *  @return 可用磁盘容量
+ */
++ (NSString *)currentDeviceAvailableCapacitySize;
 
 
 @end

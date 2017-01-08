@@ -35,7 +35,7 @@
 //获取设备内存
 #import <sys/sysctl.h>
 #import <mach/mach.h>
-
+#import <sys/mount.h>
 @implementation NSString (TJ_Unity)
 
 #pragma mark - json序列化
@@ -355,5 +355,96 @@ static inline NSDictionary * getIPAddress(){
     return resultState;
 }
 
+#pragma mark - 设备容量
+// 获取当前设备可用内存
++(NSString *)currentDeviceAvailableMemory{
 
+    return capacitySizeToString(availableMemory());
+  
+}
++ (NSString *)currentDeviceUserTakeUpMemory{
+    return  capacitySizeToString(userTakeUpMemory());
+}
+// 获取当前设备可用内存
+static inline double availableMemory(){
+    vm_statistics_data_t vmStats;
+    mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
+    kern_return_t kernReturn = host_statistics(mach_host_self(),
+                                               HOST_VM_INFO,
+                                               (host_info_t)&vmStats,
+                                               &infoCount);
+    
+    if (kernReturn != KERN_SUCCESS) {
+        return NSNotFound;
+    }
+    
+    return (vm_page_size *vmStats.free_count) ;
+}
+
+// 获取当前任务所占用的内存
+static inline double userTakeUpMemory()
+{
+    task_basic_info_data_t taskInfo;
+    mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
+    kern_return_t kernReturn = task_info(mach_task_self(),
+                                         TASK_BASIC_INFO,
+                                         (task_info_t)&taskInfo,
+                                         &infoCount);
+    
+    if (kernReturn != KERN_SUCCESS
+        ) {
+        return NSNotFound;
+    }
+    
+    return taskInfo.resident_size;
+}
+
++ (NSString *)currentDeviceTotalCapacitySize{
+
+    return capacitySizeToString(getTotalCapacitySize());
+}
+//获取总磁盘容量
+static inline long long getTotalCapacitySize (){
+    struct statfs buf;
+    unsigned long long freeSpace = -1;
+    if (statfs("/var", &buf) >= 0)
+    {
+        freeSpace = (unsigned long long)(buf.f_bsize * buf.f_blocks);
+    }
+    return freeSpace;
+
+}
++  (NSString *)currentDeviceAvailableCapacitySize{
+  return capacitySizeToString(getAvailableCapacitySize());
+}
+//获取可用磁盘容量
+static inline long long getAvailableCapacitySize(){
+    struct statfs buf;
+    unsigned long long freeSpace = -1;
+    if (statfs("/var", &buf) >= 0)
+    {
+        freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
+    }
+    return freeSpace;
+}
+
+//容量转换
+static inline NSString * capacitySizeToString(unsigned long long  capacitySize){
+    NSInteger KB = 1024;
+    NSInteger MB = KB*KB;
+    NSInteger GB = MB*KB;
+    
+    if (capacitySize < 10)  {
+        return @"0 B";
+    }else if (capacitySize < KB)    {
+        return @"< 1 KB";
+    }else if (capacitySize < MB)    {
+        return [NSString stringWithFormat:@"%.1f KB",((CGFloat)capacitySize)/KB];
+    }else if (capacitySize < GB)    {
+        return [NSString stringWithFormat:@"%.1f MB",((CGFloat)capacitySize)/MB];
+    }else   {
+        return [NSString stringWithFormat:@"%.1f GB",((CGFloat)capacitySize)/GB];
+    }
+
+}
 @end
