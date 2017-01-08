@@ -54,8 +54,6 @@
 + (NSString *)decodeString:(NSString *)encodedURLString;
 
 
-
-
 /**
  *   获取当前设备的型号
  *  @return 设备型号
@@ -87,7 +85,6 @@
 + (NSString *)currentDeviceNetWorkType;
 
 
-
 /**
  *  对字符串进行MD5加密
  *
@@ -96,5 +93,23 @@
  *  @return md5加密后的字符串
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
+
+
+/**
+ *  获取设备的ip地址
+ *
+ *  @param netWorkISIPV4 ipv4还是ipv6
+ *
+ *  @return ip地址
+ */
+
++(NSString *)iPhoneDeviceIPAddress:(BOOL)netWorkISIPV4;
+
+
+
+
+
+
+
 
 @end

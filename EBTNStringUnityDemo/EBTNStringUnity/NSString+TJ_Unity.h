@@ -97,4 +97,15 @@
  */
 + (NSString *)EncryptionMD5:(NSString *)encryptString;
 
+
+/**
+ *  获取设备的ip地址
+ *
+ *  @param netWorkISIPV4 ipv4还是ipv6
+ *
+ *  @return ip地址
+ */
+
++(NSString *)iPhoneDeviceIPAddress:(BOOL)netWorkISIPV4;
+
 @end
